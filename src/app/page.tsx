@@ -15,7 +15,7 @@ export default function Home() {
       <div className="absolute top-0 left-0 w-full h-full z-0 opacity-60">
         <ReactPlayer
           // Replace with your actual video URL or local file path
-          url="https://media.istockphoto.com/id/1092655748/video/group-of-people-doing-exercise-with-kettlebell-in-gym.mp4?s=mp4-640x640-is&k=20&c=WVYLugYhSlv4iJUBhSd-FWr6aaARDg8YudO0aoYarhE="
+          src="https://media.istockphoto.com/id/1092655748/video/group-of-people-doing-exercise-with-kettlebell-in-gym.mp4?s=mp4-640x640-is&k=20&c=WVYLugYhSlv4iJUBhSd-FWr6aaARDg8YudO0aoYarhE="
           playing={true}
           loop={true}
           muted={true} // REQUIRED for autoplay to work in most browsers

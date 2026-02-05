@@ -1,6 +1,6 @@
 'use server';
 
-import { resend } from '@/lib/resend';
+import { resend } from '@/resend';
 
 export async function sendWelcomeEmail(email: string, name: string) {
   try {
