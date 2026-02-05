@@ -252,3 +252,4 @@ https://nextjs.org/docs/messages/module-not-found
 [00:10:25.341] Server  LOG     ✓ Compiled in 28ms
 [00:10:27.083] Browser ERROR   unhandledRejection: AbortError: The play() request was interrupted because video-only background media was paused to save power. https://goo.gl/LdLk22
 [00:10:42.625] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:18:18.169] Server  LOG     ✓ Compiled in 15ms
