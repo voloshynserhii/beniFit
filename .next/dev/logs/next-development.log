@@ -1,0 +1,254 @@
+[00:00:00.579] Server  LOG     ✓ Ready in 434ms
+[00:00:01.245] Server  ERROR   ⨯ ./src/app/page.tsx
+Module not found: Can't resolve 'react-player/lazy'
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./src/app/page.tsx:9:35
+Module not found: Can't resolve 'react-player/lazy'
+   7 | // We use dynamic import for ReactPlayer to avoid hydration errors 
+   8 | // because it relies on browser-specific APIs (window/document).
+>  9 | const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false });
+     |                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 |
+  11 | export default function Home() {
+  12 |   return (
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:00:01.413] Browser ERROR   uncaughtError: Error: ./src/app/page.tsx:9:35
+Module not found: Can't resolve 'react-player/lazy'
+   7 | // We use dynamic import for ReactPlayer to avoid hydration errors 
+   8 | // because it relies on browser-specific APIs (window/document).
+>  9 | const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false });
+     |                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 |
+  11 | export default function Home() {
+  12 |   return (
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:00:02.082] Browser ERROR   ./src/app/page.tsx:9:35
+Module not found: Can't resolve 'react-player/lazy'
+   7 | // We use dynamic import for ReactPlayer to avoid hydration errors 
+   8 | // because it relies on browser-specific APIs (window/document).
+>  9 | const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false });
+     |                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 |
+  11 | export default function Home() {
+  12 |   return (
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:02.082] Browser ERROR   ./src/app/page.tsx:9:35
+Module not found: Can't resolve 'react-player/lazy'
+   7 | // We use dynamic import for ReactPlayer to avoid hydration errors 
+   8 | // because it relies on browser-specific APIs (window/document).
+>  9 | const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false });
+     |                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 |
+  11 | export default function Home() {
+  12 |   return (
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:02:16.484] Server  ERROR   ⨯ ./src/app/page.tsx
+Module not found: Can't resolve 'react-player/lazy'
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:02:16.484] Server  ERROR   ⨯ ./src/app/page.tsx:9:35
+Module not found: Can't resolve 'react-player/lazy'
+   7 | // We use dynamic import for ReactPlayer to avoid hydration errors 
+   8 | // because it relies on browser-specific APIs (window/document).
+>  9 | const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false });
+     |                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 | const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
+  11 |
+  12 | export default function Home() {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:02:17.085] Browser ERROR   ./src/app/page.tsx:10:7
+Ecmascript file had an error
+   8 | // because it relies on browser-specific APIs (window/document).
+   9 | const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false });
+> 10 | const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
+     |       ^^^^^^^^^^^
+  11 |
+  12 | export default function Home() {
+  13 |   return (
+
+the name `ReactPlayer` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+[00:02:17.085] Browser ERROR   ./src/app/page.tsx:9:35
+Module not found: Can't resolve 'react-player/lazy'
+   7 | // We use dynamic import for ReactPlayer to avoid hydration errors 
+   8 | // because it relies on browser-specific APIs (window/document).
+>  9 | const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false });
+     |                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 | const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
+  11 |
+  12 | export default function Home() {
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:02:28.455] Browser ERROR   ./src/app/page.tsx:10:7
+Ecmascript file had an error
+   8 | // because it relies on browser-specific APIs (window/document).
+   9 | const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false });
+> 10 | const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
+     |       ^^^^^^^^^^^
+  11 |
+  12 | export default function Home() {
+  13 |   return (
+
+the name `ReactPlayer` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+[00:02:28.455] Browser ERROR   ./src/app/page.tsx:9:35
+Module not found: Can't resolve 'react-player/lazy'
+   7 | // We use dynamic import for ReactPlayer to avoid hydration errors 
+   8 | // because it relies on browser-specific APIs (window/document).
+>  9 | const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false });
+     |                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 | const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
+  11 |
+  12 | export default function Home() {
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:02:28.482] Server  LOG     ✓ Compiled in 10ms
+[00:02:28.827] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:37.496] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:40.612] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:42.358] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:43.405] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:44.803] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:06.767] Server  LOG     ✓ Compiled in 22ms
+[00:04:12.138] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:14.360] Server  LOG     ✓ Compiled in 28ms
+[00:06:15.705] Browser ERROR   unhandledRejection: NotSupportedError: Failed to load because no supported source was found.
+[00:06:17.419] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:17.921] Browser ERROR   unhandledRejection: NotSupportedError: Failed to load because no supported source was found.
+[00:06:23.049] Server  LOG     ✓ Compiled in 11ms
+[00:06:24.324] Browser ERROR   unhandledRejection: NotSupportedError: Failed to load because no supported source was found.
+[00:06:25.263] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:25.899] Browser ERROR   unhandledRejection: NotSupportedError: Failed to load because no supported source was found.
+[00:06:37.014] Server  LOG     ✓ Compiled in 12ms
+[00:06:37.398] Browser ERROR   unhandledRejection: NotSupportedError: The element has no supported sources.
+[00:06:37.398] Browser ERROR   unhandledRejection: NotSupportedError: The element has no supported sources.
+[00:06:39.037] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:43.993] Server  LOG     ✓ Compiled in 10ms
+[00:06:45.089] Browser ERROR   unhandledRejection: NotSupportedError: Failed to load because no supported source was found.
+[00:07:00.402] Server  LOG     ✓ Compiled in 15ms
+[00:07:02.087] Browser ERROR   unhandledRejection: AbortError: The play() request was interrupted because video-only background media was paused to save power. https://goo.gl/LdLk22
+[00:10:25.341] Server  LOG     ✓ Compiled in 28ms
+[00:10:27.083] Browser ERROR   unhandledRejection: AbortError: The play() request was interrupted because video-only background media was paused to save power. https://goo.gl/LdLk22
+[00:10:42.625] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
