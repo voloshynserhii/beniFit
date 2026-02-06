@@ -1,5 +1,7 @@
 # dependencies
 /node_modules
+/vendor
+composer.phar
 /.pnp
 .pnp.*
 .yarn/*

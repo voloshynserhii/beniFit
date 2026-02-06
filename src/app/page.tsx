@@ -1,19 +1,17 @@
-'use client';
-
-import React from 'react';
-import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import ContactForm from '@/app/components/ContactForm';
-
-// We use dynamic import for ReactPlayer to avoid hydration errors 
-// because it relies on browser-specific APIs (window/document).
-const ReactPlayer = dynamic(() => import('react-player'), { ssr: false }) as unknown as React.ComponentType<any>;
+import Footer from '@/app/components/Footer';
+import Reviews from '@/app/components/Reviews';
+import About from '@/app/components/About';
 
 export default function Home() {
   return (
     <>
       <Hero />
+      <About />
       <ContactForm />
+      <Reviews />
+      <Footer />
     </>
   );
 }
@@ -21,26 +19,17 @@ export default function Home() {
 function Hero() {
   return (
     <main className="relative w-full h-screen overflow-hidden bg-black">
-      <div className="absolute top-0 left-0 w-full h-full z-0 opacity-60">
-        <ReactPlayer
-          src="https://media.istockphoto.com/id/1092655748/video/group-of-people-doing-exercise-with-kettlebell-in-gym.mp4?s=mp4-640x640-is&k=20&c=WVYLugYhSlv4iJUBhSd-FWr6aaARDg8YudO0aoYarhE="
-          playing={true}
-          loop={true}
-          muted={true} // REQUIRED for autoplay to work in most browsers
-          width="100%"
-          height="100%"
-          playsinline={true} // Important for iOS
-          config={{
-            file: {
-              attributes: {
-                style: { width: '100%', height: '100%', objectFit: 'cover' },
-              },
-            },
-          }}
-        />
-      </div>
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute top-0 left-0 w-full h-full object-cover z-0 opacity-60"
+      >
+        <source src="https://media.istockphoto.com/id/1092655748/video/group-of-people-doing-exercise-with-kettlebell-in-gym.mp4?s=mp4-640x640-is&k=20&c=WVYLugYhSlv4iJUBhSd-FWr6aaARDg8YudO0aoYarhE=" type="video/mp4" />
+      </video>
 
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-fit h-fit bg-zinc-900 p-8 rounded-lg z-100 text-center">
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-fit h-fit bg-zinc-900 p-8 rounded-lg z-10 text-center">
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
           Beni<span className="text-blue-600">Fit</span>
         </h1>
@@ -63,7 +52,6 @@ function Hero() {
           </Link>
         </div>
       </div>
-      
     </main>
   );
 }
