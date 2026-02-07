@@ -124,12 +124,15 @@ const Reviews = () => {
     const cardRef = useRef<HTMLDivElement>(null);
     const [expandedReviewId, setExpandedReviewId] = useState<number | null>(null);
 
+    const [touchStartX, setTouchStartX] = useState<number | null>(null);
+    const [touchMoveX, setTouchMoveX] = useState<number | null>(null);
+
     const handleToggleExpand = (reviewId: number) => {
         setExpandedReviewId(prevId => (prevId === reviewId ? null : reviewId));
     };
 
     useEffect(() => {
-        const mediaQuery = window.matchMedia('(min-width: 768px)');
+        const mediaQuery = window.matchMedia('(min-width: 1024px)');
         setIsDesktop(mediaQuery.matches);
         const handler = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
         mediaQuery.addEventListener('change', handler);
@@ -149,7 +152,7 @@ const Reviews = () => {
         return () => window.removeEventListener('resize', handleResize);
     }, [isDesktop]);
 
-    const reviewsPerPage = isDesktop ? 3 : 1;
+        const reviewsPerPage = isDesktop ? 3 : 1;
     const maxIndex = reviewsData.length - reviewsPerPage;
 
     const handlePrev = () => {
@@ -166,6 +169,31 @@ const Reviews = () => {
         }
     }, [isDesktop, currentIndex, maxIndex]);
 
+    const handleTouchStart = (e: React.TouchEvent) => {
+        if (isDesktop) return;
+        setTouchStartX(e.touches[0].clientX);
+        setTouchMoveX(e.touches[0].clientX);
+    };
+
+    const handleTouchMove = (e: React.TouchEvent) => {
+        if (isDesktop) return;
+        setTouchMoveX(e.touches[0].clientX);
+    };
+
+    const handleTouchEnd = () => {
+        if (isDesktop || touchStartX === null || touchMoveX === null) return;
+
+        const touchDiff = touchStartX - touchMoveX;
+        if (touchDiff > 50) { // Swiped left
+            handleNext();
+        } else if (touchDiff < -50) { // Swiped right
+            handlePrev();
+        }
+
+        setTouchStartX(null);
+        setTouchMoveX(null);
+    };
+
 
     return (
         <section id="reviews" className="bg-zinc-300 py-20 font-sans">
@@ -181,7 +209,7 @@ const Reviews = () => {
             <div className="relative max-w-7xl mx-auto flex items-start justify-center">
                 <button
                     onClick={handlePrev}
-                    className="absolute -left-4 top-[125px] -translate-y-1/2 z-20 bg-slate-50 p-3 rounded-full shadow-lg hover:bg-slate-200 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 cursor-pointer"
+                    className="absolute -left-4 top-[125px] -translate-y-1/2 z-20 bg-slate-50 p-3 rounded-full shadow-lg hover:bg-slate-200 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 cursor-pointer hidden lg:block"
                     aria-label="Previous review"
                 >
                     <ChevronLeft className="w-6 h-6 text-gray-700" />
@@ -191,12 +219,15 @@ const Reviews = () => {
                     <div
                         className="flex items-start transition-transform duration-300 ease-in-out"
                         style={{ transform: `translateX(-${currentIndex * cardWidth}px)` }}
+                        onTouchStart={handleTouchStart}
+                        onTouchMove={handleTouchMove}
+                        onTouchEnd={handleTouchEnd}
                     >
                         {reviewsData.map((review, index) => (
                             <div
                                 ref={index === 0 ? cardRef : null}
                                 key={review.id}
-                                className="w-full md:w-1/3 flex-shrink-0"
+                                className="w-full lg:w-1/3 flex-shrink-0"
                                 style={{ padding: '0 12px' }}
                             >
                                 <ReviewCard
@@ -212,7 +243,7 @@ const Reviews = () => {
 
                 <button
                     onClick={handleNext}
-                    className="absolute -right-4 top-[125px] -translate-y-1/2 z-20 bg-slate-50 p-3 rounded-full shadow-lg hover:bg-slate-200 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 cursor-pointer"
+                    className="absolute -right-4 top-[125px] -translate-y-1/2 z-20 bg-slate-50 p-3 rounded-full shadow-lg hover:bg-slate-200 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 cursor-pointer hidden lg:block"
                     aria-label="Next review"
                 >
                     <ChevronRight className="w-6 h-6 text-gray-700" />
