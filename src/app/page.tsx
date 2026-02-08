@@ -1,8 +1,8 @@
-import Hero from '@/app/components/Hero';
-import ContactForm from '@/app/components/ContactForm';
-import Footer from '@/app/components/Footer';
-import Reviews from '@/app/components/Reviews';
-import About from '@/app/components/About';
+import Hero from '@/components/Hero';
+import ContactForm from '@/components/ContactForm';
+import Footer from '@/components/Footer';
+import Reviews from '@/components/Reviews';
+import About from '@/components/About';
 
 export default function Home() {
   return (

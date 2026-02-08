@@ -69,7 +69,7 @@ export default function Footer() {
 
                     <div>
                         <h4 className="mb-6 font-bold uppercase text-black tracking-wide">
-                            Follow Me
+                            Follow Us
                         </h4>
                         <div className="flex gap-4 text-slate-50">
                             <Link href="https://www.instagram.com/benifitcastellon/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">

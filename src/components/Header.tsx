@@ -43,6 +43,7 @@ function BeniFitLogo() {
 
 const navItems = [
   { name: 'Home', href: '/' },
+  { name: 'Trainings', href: '/trainings' },
   { name: 'About Us', href: '#about' },
   { name: 'Reviews', href: '#reviews' },
   { name: 'Contacts', href: '#contacts' },
@@ -107,11 +108,15 @@ export default function Header() {
           <nav className="hidden md:flex items-center gap-6">
             {navItems.map((item) => {
               const isActive = pathname === item.href
+              const href =
+                item.href.startsWith('#') && pathname !== '/'
+                  ? `/${item.href}`
+                  : item.href
 
               return (
                 <Link
                   key={item.name}
-                  href={item.href}
+                  href={href}
                   className={`text-sm font-bold transition-colors ${isActive
                     ? 'text-blue-600 hover:text-blue-500'
                     : 'text-gray-300 hover:text-stone-400'
@@ -145,11 +150,18 @@ export default function Header() {
         <div ref={menuRef} className="md:hidden shadow-md bg-gradient-to-b from-[#1c1c1c] to-[#111111]">
           <nav className="px-10 py-10 space-y-1">
             <div className="flex flex-col gap-8">
-              {navItems.map((link) => (
-                <Link key={link.name} href={link.href} onClick={() => setIsOpen(false)} className="text-xl font-bold block text-white hover:text-blue-500">
-                  {link.name}
-                </Link>
-              ))}
+              {navItems.map((link) => {
+                const href =
+                  link.href.startsWith('#') && pathname !== '/'
+                    ? `/${link.href}`
+                    : link.href
+
+                return (
+                  <Link key={link.name} href={href} onClick={() => setIsOpen(false)} className="text-xl font-bold block text-white hover:text-blue-500">
+                    {link.name}
+                  </Link>
+                )
+              })}
             </div>
           </nav>
         </div>
