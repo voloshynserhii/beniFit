@@ -10,7 +10,7 @@ export default function TrainingsPage() {
         title="Online & Face-to-Face Training"
         subtitle="Transform your body and mind with personalized training plans."
         buttons={[
-          { text: 'Book a Free Consultation', href: '/contact', primary: true },
+          { text: 'Book a Free Consultation', href: '#contacts', primary: true },
           { text: 'Learn More', href: '#reviews' },
         ]}
       />

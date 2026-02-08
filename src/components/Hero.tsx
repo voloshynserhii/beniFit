@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface HeroProps {
   videoSrc?: string;
@@ -19,16 +20,19 @@ export default function Hero({
   subtitle = "Elite personal training tailored to your physiology and goals.",
   buttons = [
     { text: 'Start Training', href: '/trainings', primary: true },
-    { text: 'Contact Me', href: '/contact' },
+    { text: 'Contact Me', href: '#contacts' },
   ],
 }: HeroProps) {
   return (
     <main className="relative w-full h-screen overflow-hidden bg-black">
       {imgSrc ? (
-        <img
+        <Image
           src={imgSrc}
           alt="Background"
-          className="absolute top-0 left-0 w-full h-full object-cover z-0 opacity-60"
+          fill
+          style={{ objectFit: 'cover' }}
+          className="z-0 opacity-60"
+          priority
         />
       ) : (
         <video

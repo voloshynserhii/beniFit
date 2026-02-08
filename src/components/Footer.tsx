@@ -50,8 +50,8 @@ export default function Footer() {
                             About Me
                         </h4>
                         <ul className="space-y-3 text-sm">
-                            <li><Link href="/about" className="hover:text-black">Get to know me</Link></li>
-                            <li><Link href="/contacts" className="hover:text-black">Contacts</Link></li>
+                            <li><Link href="#about" className="hover:text-black">Get to know me</Link></li>
+                            <li><Link href="#contacts" className="hover:text-black">Contacts</Link></li>
                         </ul>
                     </div>
 
