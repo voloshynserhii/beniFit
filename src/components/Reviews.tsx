@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import { Dictionary } from '@/get-dictionary';
 
 interface Review {
     id: number;
@@ -72,7 +73,7 @@ const ReviewCard = ({ review, isExpanded, onToggleExpand }: ReviewCardProps) => 
 };
 
 
-export default function Reviews ({ dict }: { dict: any }) {
+export default function Reviews ({ dict }: { dict: Dictionary['reviews'] }) {
     const reviewsData: Review[] = dict.items;
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isDesktop, setIsDesktop] = useState(false);

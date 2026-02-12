@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Instagram } from 'lucide-react'
-import { getDictionary } from '@/get-dictionary';
+import { getDictionary, Locale } from '@/get-dictionary';
 
 function BeniFitLogo() {
     return (
@@ -37,8 +37,8 @@ function BeniFitLogo() {
     )
 }
 
-export default async function Footer({ lang }) {
-    const dict = await getDictionary(lang as any);
+export default async function Footer({ lang }: { lang: string }) {
+    const dict = await getDictionary(lang as Locale);
     
     return (
         <footer className="bg-zinc-400 pt-24 pb-12 text-black">

@@ -1,8 +1,9 @@
 'use client'
 
 import { useState } from 'react';
+import { Dictionary } from '@/get-dictionary';
 
-export default function ContactForm({ dict }: { dict: any }) {
+export default function ContactForm({ dict }: { dict: Dictionary['contact'] }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');

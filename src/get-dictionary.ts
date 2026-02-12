@@ -7,6 +7,10 @@ const dictionaries = {
   ru: () => import('./dictionaries/ru.json').then((module) => module.default),
 };
 
-export const getDictionary = async (locale: keyof typeof dictionaries) => {
+export type Locale = keyof typeof dictionaries;
+
+export const getDictionary = async (locale: Locale) => {
   return dictionaries[locale]();
 };
+
+export type Dictionary = Awaited<ReturnType<typeof getDictionary>>;
