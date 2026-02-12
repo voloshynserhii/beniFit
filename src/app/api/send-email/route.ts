@@ -10,8 +10,8 @@ export async function POST(req: NextRequest) {
 
   try {
     const { data, error } = await resend.emails.send({
-      from: 'BeniFit Contact <onboarding@resend.dev>',
-      to: ['vosquery@gmail.com'],
+      from: 'BeniFit Contact <contact@beni-fit.club>',
+      to: ['benifit.coach@gmail.com'],
       subject: `New Contact Form Submission from ${name}`,
       html: `<p>You have a new contact form submission</p><br>
         <p><strong>Name: </strong> ${name}</p>
