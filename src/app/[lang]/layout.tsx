@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import Header from "@/components/Header";
-import "./globals.css";
+import "../globals.css";
 
 const roboto = Roboto({
   weight: ["400", "700"],
@@ -25,13 +25,20 @@ export const metadata: Metadata = {
   manifest: '/site.webmanifest',
 };
 
-export default function RootLayout({
+export async function generateStaticParams() {
+  return [{ lang: 'en' }, { lang: 'es' }];
+}
+
+export default async function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ lang: string }>;
 }>) {
+  const { lang } = await params;
   return (
-    <html lang="en">
+    <html lang={lang}>
       <body className={`${roboto.variable} font-sans antialiased`}>
         <Header />
         {children}
