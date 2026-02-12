@@ -1,11 +1,14 @@
 import Hero from '@/components/Hero';
+import WhoNeeds from '@/components/WhoNeeds';
 import Reviews from '@/components/Reviews';
+import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
 import { getDictionary } from '@/get-dictionary';
 
 export default async function TrainingsPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const dict = await getDictionary(lang as any);
+
   return (
     <>
       <Hero
@@ -18,7 +21,9 @@ export default async function TrainingsPage({ params }: { params: Promise<{ lang
           { text: 'Learn More', href: '#reviews' },
         ]}
       />
+      <WhoNeeds dict={dict.targetAudience} />
       <Reviews dict={dict.reviews} />
+      <ContactForm dict={dict.contact} />
       <Footer lang={lang} />
     </>
   );

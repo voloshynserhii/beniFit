@@ -45,8 +45,6 @@ const navItems = [
   { name: 'Home', href: '/' },
   { name: 'Trainings', href: '/trainings' },
   { name: 'About Us', href: '#about' },
-  { name: 'Reviews', href: '#reviews' },
-  { name: 'Contacts', href: '#contacts' },
 ]
 
 export default function Header() {

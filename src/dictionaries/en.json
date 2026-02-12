@@ -48,6 +48,15 @@
       }
     ]
   },
+    "targetAudience": {
+    "title": "Who is this for?",
+    "items": [
+      "People who want to gain strength, power, and endurance",
+      "People who strive to improve their health.",
+      "Those who don't know where to start but want to do it right.",
+      "Elderly people who strive to gain autonomy and quality of life."
+    ]
+  },
   "contact": {
     "title": "LET'S TALK",
     "namePlaceholder": "NAME",

@@ -13,8 +13,8 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
     <>
       <Hero lang={lang} />
       <About lang={lang} />
-      <ContactForm dict={dict.contact} />
       <Reviews dict={dict.reviews} />
+      <ContactForm dict={dict.contact} />
       <Footer lang={lang} />
     </>
   );

@@ -48,6 +48,15 @@
       }
     ]
   },
+    "targetAudience": {
+    "title": "¿A quién va dirigido?",
+    "items": [
+      "Personas que quieren ganar fuerza, potencia y resistencia",
+      "Personas que buscan mejorar su salud.",
+      "Aquellos que no saben por dónde empezar, pero quieren hacerlo correctamente.",
+      "Personas mayores que buscan ganar autonomía y calidad de vida."
+    ]
+  },
   "contact": {
     "title": "HABLEMOS",
     "namePlaceholder": "NOMBRE",
