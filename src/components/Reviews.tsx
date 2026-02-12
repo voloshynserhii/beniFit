@@ -13,51 +13,6 @@ interface Review {
     text: string;
 }
 
-const reviewsData: Review[] = [
-    {
-        id: 1,
-        name: "Julian Marquez",
-        avatarLetter: "J",
-        rating: 5,
-        text: "I'm completely satisfied with my experience. I'd never had a personal trainer before, but H. Linares has been fantastic, patient, and incredibly motivating. The results are real, and I feel better than ever."
-    },
-    {
-        id: 2,
-        name: "Baldomero Rodiles",
-        avatarLetter: "B",
-        rating: 5,
-        text: "Thanks to Hugo, my shoulder pain is gone! His professional approach changed my life and helped me avoid surgery. Highly recommended for anyone with persistent injuries."
-    },
-    {
-        id: 3,
-        name: "Raul Sanchez Ortiz",
-        avatarLetter: "R",
-        rating: 5,
-        text: "As a fellow trainer, I can attest to Hugo's deep knowledge. He's a true professional who knows how to work with clients to get the best results safely and efficiently."
-    },
-    {
-        id: 4,
-        name: "David G.",
-        avatarLetter: "D",
-        rating: 5,
-        text: "A great coach with extensive knowledge. I am also a coach and I know how Hugo works with his clients/patients and he is a true professional. I've learned a lot just from observing his methods."
-    },
-    {
-        id: 5,
-        name: "Maria F.",
-        avatarLetter: "M",
-        rating: 5,
-        text: "I was hesitant to start personal training, but it has been the best decision for my health. The workout plans are tailored to my needs, and I'veseen significant progress in my strength and energy levels."
-    },
-    {
-        id: 6,
-        name: "Carlos S.",
-        avatarLetter: "C",
-        rating: 5,
-        text: "Excellent professional. The training sessions are tough but rewarding. I have achieved my fitness goals much faster than I expected. I highly recommend him to anyone."
-    }
-];
-
 interface ReviewCardProps {
     review: Review;
     isExpanded: boolean;
@@ -117,7 +72,8 @@ const ReviewCard = ({ review, isExpanded, onToggleExpand }: ReviewCardProps) => 
 };
 
 
-const Reviews = () => {
+export default function Reviews ({ dict }: { dict: any }) {
+    const reviewsData: Review[] = dict.items;
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isDesktop, setIsDesktop] = useState(false);
     const [cardWidth, setCardWidth] = useState(0);
@@ -199,10 +155,10 @@ const Reviews = () => {
         <section id="reviews" className="bg-zinc-300 py-20 font-sans">
             <div className="max-w-4xl mx-auto text-center px-4">
                 <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
-                    WHAT OUR CLIENTS SAY
+                    {dict.title}
                 </h2>
                 <p className="text-lg text-gray-900 mb-12">
-                    Real stories from real people who have transformed their lives with us.
+                    {dict.subtitle}
                 </p>
             </div>
 
@@ -254,5 +210,3 @@ const Reviews = () => {
         </section>
     );
 };
-
-export default Reviews;

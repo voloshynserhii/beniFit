@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-export default function ContactForm() {
+export default function ContactForm({ dict }: { dict: any }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -33,10 +33,10 @@ export default function ContactForm() {
         setEmail('');
         setMessage('');
       } else {
-        setError(data.message || 'An unknown error occurred.');
+        setError(data.message || dict.unknownError);
       }
     } catch (err) {
-      setError('An error occurred while sending the message.');
+      setError(dict.errorMessage);
     } finally {
       setSubmitting(false);
     }
@@ -46,13 +46,13 @@ export default function ContactForm() {
     <section id="contacts" className="w-full bg-zinc-300 py-24">
       <div className="mx-auto max-w-4xl px-6">
         <h2 className="mb-16 text-center text-4xl font-extrabold tracking-wide text-black">
-          LET&apos;S TALK
+          {dict.title}
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-10">
           <input
             type="text"
-            placeholder="NAME"
+            placeholder={dict.namePlaceholder}
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
@@ -61,7 +61,7 @@ export default function ContactForm() {
 
           <input
             type="email"
-            placeholder="EMAIL"
+            placeholder={dict.emailPlaceholder}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
@@ -83,10 +83,10 @@ export default function ContactForm() {
               disabled={submitting}
               className="rounded-md bg-blue-600 px-10 py-4 text-sm font-bold tracking-widest text-white transition hover:bg-blue-500 cursor-pointer disabled:bg-gray-400"
             >
-              {submitting ? 'SENDING...' : 'SEND'}
+              {submitting ? dict.sendingButton : dict.sendButton}
             </button>
           </div>
-          {success && <p className="text-green-500">Message sent successfully!</p>}
+          {success && <p className="text-green-500">{dict.successMessage}</p>}
           {error && <p className="text-red-500">{error}</p>}
         </form>
       </div>

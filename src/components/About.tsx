@@ -1,6 +1,7 @@
 import React from 'react';
+import { getDictionary } from '@/get-dictionary';
 
-const About = () => {
+const About = ({ lang }) => {
     return (
         <section id="about" className="bg-zinc-300 py-20 font-sans">
             <div className="max-w-4xl mx-auto px-4">

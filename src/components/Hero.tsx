@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { getDictionary } from '@/get-dictionary';
 
 interface HeroProps {
+  lang: string;
   videoSrc?: string;
   imgSrc?: string;
   title?: React.ReactNode;
@@ -9,7 +11,8 @@ interface HeroProps {
   buttons?: { text: string; href: string; primary?: boolean }[];
 }
 
-export default function Hero({
+export default async function Hero({
+  lang,
   videoSrc = "https://media.istockphoto.com/id/1092655748/video/group-of-people-doing-exercise-with-kettlebell-in-gym.mp4?s=mp4-640x640-is&k=20&c=WVYLugYhSlv4iJUBhSd-FWr6aaARDg8YudO0aoYarhE=",
   imgSrc,
   title = (
@@ -23,6 +26,8 @@ export default function Hero({
     { text: 'Contact Me', href: '#contacts' },
   ],
 }: HeroProps) {
+  const dict = await getDictionary(lang as any);
+
   return (
     <main className="relative w-full h-screen overflow-hidden bg-black">
       {imgSrc ? (

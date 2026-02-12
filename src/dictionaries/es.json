@@ -1,3 +1,62 @@
 {
-  "welcome": "Bienvenido a nuestro sitio web"
+  "welcome": "Bienvenido a nuestro sitio web",
+  "reviews": {
+    "title": "LO QUE DICEN NUESTROS CLIENTES",
+    "subtitle": "Historias reales de personas reales que han transformado sus vidas con nosotros.",
+    "items": [
+      {
+        "id": 1,
+        "name": "Julian Marquez",
+        "avatarLetter": "J",
+        "rating": 5,
+        "text": "Estoy completamente satisfecho con mi experiencia. Nunca antes había tenido un entrenador personal, pero Sergio ha sido fantástico, paciente e increíblemente motivador. Los resultados son reales y me siento mejor que nunca."
+      },
+      {
+        "id": 2,
+        "name": "Baldomero Rodiles",
+        "avatarLetter": "B",
+        "rating": 5,
+        "text": "¡Gracias a Sergio, mi dolor de hombro ha desaparecido! Su enfoque profesional cambió mi vida y me ayudó a evitar la cirugía. Muy recomendable para cualquier persona con lesiones persistentes."
+      },
+      {
+        "id": 3,
+        "name": "Raul Sanchez Ortiz",
+        "avatarLetter": "R",
+        "rating": 5,
+        "text": "Como compañero entrenador, puedo dar fe del profundo conocimiento de Sergio. Es un verdadero profesional que sabe cómo trabajar con los clientes para obtener los mejores resultados de manera segura y eficiente."
+      },
+      {
+        "id": 4,
+        "name": "David G.",
+        "avatarLetter": "D",
+        "rating": 5,
+        "text": "Un gran entrenador con amplios conocimientos. También soy entrenador y sé cómo trabaja Sergio con sus clientes/pacientes y es un verdadero profesional. He aprendido mucho solo observando sus métodos."
+      },
+      {
+        "id": 5,
+        "name": "Maria F.",
+        "avatarLetter": "M",
+        "rating": 5,
+        "text": "Dudaba en comenzar el entrenamiento personal, pero ha sido la mejor decisión para mi salud. Los planes de entrenamiento se adaptan a mis necesidades y he visto un progreso significativo en mi fuerza y niveles de energía."
+      },
+      {
+        "id": 6,
+        "name": "Carlos S.",
+        "avatarLetter": "C",
+        "rating": 5,
+        "text": "Excelente profesional. Las sesiones de entrenamiento son duras pero gratificantes. He logrado mis objetivos de fitness mucho más rápido de lo que esperaba. Lo recomiendo encarecidamente a cualquiera."
+      }
+    ]
+  },
+  "contact": {
+    "title": "HABLEMOS",
+    "namePlaceholder": "NOMBRE",
+    "emailPlaceholder": "CORREO ELECTRÓNICO",
+    "messagePlaceholder": "MENSAJE",
+    "sendButton": "ENVIAR",
+    "sendingButton": "ENVIANDO...",
+    "successMessage": "¡Mensaje enviado con éxito!",
+    "errorMessage": "Ocurrió un error al enviar el mensaje.",
+    "unknownError": "Ocurrió un error desconocido."
+  }
 }
